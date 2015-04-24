@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AOf-4i-5vX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
@@ -19,6 +19,43 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Scro2 Bro Login View Controller-->
+        <scene sceneID="fxy-tf-Or6">
+            <objects>
+                <viewController id="AOf-4i-5vX" customClass="Scro2BroLoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LoD-oY-Yqs"/>
+                        <viewControllerLayoutGuide type="bottom" id="kb9-GC-R65"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gyN-6Z-b1p">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Xr-cC-3ij" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="176" y="440" width="248" height="43"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="248" id="Bef-ja-zQk"/>
+                                    <constraint firstAttribute="height" constant="43" id="lJ4-kP-b3c"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="AOf-4i-5vX" id="7rp-Nw-PNO"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="0Xr-cC-3ij" secondAttribute="centerX" id="OdF-X6-Ax4"/>
+                            <constraint firstAttribute="centerY" secondItem="0Xr-cC-3ij" secondAttribute="centerY" constant="-161.5" id="vTW-m2-ggg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="0Xr-cC-3ij" id="3sl-LP-BI0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bc2-ym-xce" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>

@@ -32,6 +32,7 @@
 		9C9B94B81AEAF3310095B091 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9B94AE1AEAF3310095B091 /* ParseFacebookUtils.framework */; };
 		9C9B94B91AEAF3310095B091 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9B94AF1AEAF3310095B091 /* ParseFacebookUtilsV4.framework */; };
 		9C9B94BA1AEAF3310095B091 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9B94B01AEAF3310095B091 /* ParseUI.framework */; };
+		9CE1C04F1AEAF60E002AF5C0 /* Scro2BroLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C04E1AEAF60E002AF5C0 /* Scro2BroLoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,8 @@
 		9C9B94AE1AEAF3310095B091 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		9C9B94AF1AEAF3310095B091 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		9C9B94B01AEAF3310095B091 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		9CE1C04D1AEAF60E002AF5C0 /* Scro2BroLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scro2BroLoginViewController.h; sourceTree = "<group>"; };
+		9CE1C04E1AEAF60E002AF5C0 /* Scro2BroLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scro2BroLoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,8 @@
 				9C5B87D31AEAEE210052FDCB /* Scro2BroAppDelegate.m */,
 				9C5B87D51AEAEE210052FDCB /* Scro2BroViewController.h */,
 				9C5B87D61AEAEE210052FDCB /* Scro2BroViewController.m */,
+				9CE1C04D1AEAF60E002AF5C0 /* Scro2BroLoginViewController.h */,
+				9CE1C04E1AEAF60E002AF5C0 /* Scro2BroLoginViewController.m */,
 				9C5B87D81AEAEE210052FDCB /* Main.storyboard */,
 				9C5B87DB1AEAEE210052FDCB /* Images.xcassets */,
 				9C5B87DD1AEAEE210052FDCB /* LaunchScreen.xib */,
@@ -299,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CE1C04F1AEAF60E002AF5C0 /* Scro2BroLoginViewController.m in Sources */,
 				9C5B87D71AEAEE210052FDCB /* Scro2BroViewController.m in Sources */,
 				9C5B87D41AEAEE210052FDCB /* Scro2BroAppDelegate.m in Sources */,
 				9C5B87D11AEAEE210052FDCB /* main.m in Sources */,

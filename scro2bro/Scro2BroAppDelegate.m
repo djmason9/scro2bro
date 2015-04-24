@@ -7,6 +7,7 @@
 //
 #import <Parse/Parse.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "Scro2BroAppDelegate.h"
 
 @interface Scro2BroAppDelegate ()
@@ -15,6 +16,13 @@
 
 @implementation Scro2BroAppDelegate
 
++ (void)initialize
+{
+
+    [FBSDKLoginButton class];
+    [FBSDKProfilePictureView class];
+
+}
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     [FBSDKAppEvents activateApp];

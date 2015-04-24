@@ -19,9 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    loginButton.center = self.view.center;
-    [self.view addSubview:loginButton];
+
     
 //        PFInstallation *installation = [PFInstallation currentInstallation];
 //        [installation setObject:@"djmason9@gmail.com" forKey:@"email"];
