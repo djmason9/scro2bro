@@ -1,0 +1,523 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9C5B87D11AEAEE210052FDCB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5B87D01AEAEE210052FDCB /* main.m */; };
+		9C5B87D41AEAEE210052FDCB /* Scro2BroAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5B87D31AEAEE210052FDCB /* Scro2BroAppDelegate.m */; };
+		9C5B87D71AEAEE210052FDCB /* Scro2BroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5B87D61AEAEE210052FDCB /* Scro2BroViewController.m */; };
+		9C5B87DA1AEAEE210052FDCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C5B87D81AEAEE210052FDCB /* Main.storyboard */; };
+		9C5B87DC1AEAEE210052FDCB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C5B87DB1AEAEE210052FDCB /* Images.xcassets */; };
+		9C5B87DF1AEAEE210052FDCB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C5B87DD1AEAEE210052FDCB /* LaunchScreen.xib */; };
+		9C5B87EB1AEAEE220052FDCB /* scro2broTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5B87EA1AEAEE220052FDCB /* scro2broTests.m */; };
+		9C5B87FE1AEAEE410052FDCB /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5B87F41AEAEE410052FDCB /* Bolts.framework */; };
+		9C5B87FF1AEAEE410052FDCB /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5B87F51AEAEE410052FDCB /* FBAudienceNetwork.framework */; };
+		9C5B88001AEAEE410052FDCB /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5B87F61AEAEE410052FDCB /* FBSDKCoreKit.framework */; };
+		9C5B88011AEAEE410052FDCB /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5B87F71AEAEE410052FDCB /* FBSDKLoginKit.framework */; };
+		9C5B88021AEAEE410052FDCB /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5B87F81AEAEE410052FDCB /* FBSDKShareKit.framework */; };
+		9C5B88031AEAEE410052FDCB /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5B87F91AEAEE410052FDCB /* Parse.framework */; };
+		9C5B88041AEAEE410052FDCB /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5B87FA1AEAEE410052FDCB /* ParseCrashReporting.framework */; };
+		9C5B88051AEAEE410052FDCB /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5B87FB1AEAEE410052FDCB /* ParseFacebookUtils.framework */; };
+		9C5B88061AEAEE410052FDCB /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5B87FC1AEAEE410052FDCB /* ParseFacebookUtilsV4.framework */; };
+		9C5B88071AEAEE410052FDCB /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5B87FD1AEAEE410052FDCB /* ParseUI.framework */; };
+		9C5B880A1AEAEFE80052FDCB /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5B88091AEAEFE80052FDCB /* libz.1.1.3.dylib */; };
+		9C5B880C1AEAEFF60052FDCB /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5B880B1AEAEFF60052FDCB /* libstdc++.6.dylib */; };
+		9C5B880E1AEAF0000052FDCB /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5B880D1AEAF0000052FDCB /* libsqlite3.0.dylib */; };
+		9C5B88101AEAF0220052FDCB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5B880F1AEAF0220052FDCB /* CFNetwork.framework */; };
+		9C5B88121AEAF0320052FDCB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5B88111AEAF0320052FDCB /* AudioToolbox.framework */; };
+		9C5B88141AEAF0390052FDCB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5B88131AEAF0390052FDCB /* SystemConfiguration.framework */; };
+		9C5B88161AEAF0430052FDCB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5B88151AEAF0430052FDCB /* MobileCoreServices.framework */; };
+		9C5B88181AEAF04D0052FDCB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5B88171AEAF04D0052FDCB /* Security.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9C5B87E51AEAEE220052FDCB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C5B87C31AEAEE210052FDCB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C5B87CA1AEAEE210052FDCB;
+			remoteInfo = scro2bro;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9C5B87CB1AEAEE210052FDCB /* scro2bro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scro2bro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C5B87CF1AEAEE210052FDCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C5B87D01AEAEE210052FDCB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9C5B87D21AEAEE210052FDCB /* Scro2BroAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Scro2BroAppDelegate.h; sourceTree = "<group>"; };
+		9C5B87D31AEAEE210052FDCB /* Scro2BroAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Scro2BroAppDelegate.m; sourceTree = "<group>"; };
+		9C5B87D51AEAEE210052FDCB /* Scro2BroViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Scro2BroViewController.h; sourceTree = "<group>"; };
+		9C5B87D61AEAEE210052FDCB /* Scro2BroViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Scro2BroViewController.m; sourceTree = "<group>"; };
+		9C5B87D91AEAEE210052FDCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9C5B87DB1AEAEE210052FDCB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9C5B87DE1AEAEE210052FDCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		9C5B87E41AEAEE220052FDCB /* scro2broTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = scro2broTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C5B87E91AEAEE220052FDCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C5B87EA1AEAEE220052FDCB /* scro2broTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = scro2broTests.m; sourceTree = "<group>"; };
+		9C5B87F41AEAEE410052FDCB /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../SCRO/scro/Bolts.framework; sourceTree = "<group>"; };
+		9C5B87F51AEAEE410052FDCB /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBAudienceNetwork.framework; path = ../SCRO/scro/FBAudienceNetwork.framework; sourceTree = "<group>"; };
+		9C5B87F61AEAEE410052FDCB /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../SCRO/scro/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		9C5B87F71AEAEE410052FDCB /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../SCRO/scro/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		9C5B87F81AEAEE410052FDCB /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../SCRO/scro/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		9C5B87F91AEAEE410052FDCB /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../SCRO/scro/Parse.framework; sourceTree = "<group>"; };
+		9C5B87FA1AEAEE410052FDCB /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseCrashReporting.framework; path = ../SCRO/scro/ParseCrashReporting.framework; sourceTree = "<group>"; };
+		9C5B87FB1AEAEE410052FDCB /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = ../SCRO/scro/ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		9C5B87FC1AEAEE410052FDCB /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = ../SCRO/scro/ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		9C5B87FD1AEAEE410052FDCB /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = ../SCRO/scro/ParseUI.framework; sourceTree = "<group>"; };
+		9C5B88091AEAEFE80052FDCB /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		9C5B880B1AEAEFF60052FDCB /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
+		9C5B880D1AEAF0000052FDCB /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		9C5B880F1AEAF0220052FDCB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		9C5B88111AEAF0320052FDCB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		9C5B88131AEAF0390052FDCB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9C5B88151AEAF0430052FDCB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		9C5B88171AEAF04D0052FDCB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9C5B87C81AEAEE210052FDCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C5B88181AEAF04D0052FDCB /* Security.framework in Frameworks */,
+				9C5B88161AEAF0430052FDCB /* MobileCoreServices.framework in Frameworks */,
+				9C5B88141AEAF0390052FDCB /* SystemConfiguration.framework in Frameworks */,
+				9C5B88121AEAF0320052FDCB /* AudioToolbox.framework in Frameworks */,
+				9C5B88101AEAF0220052FDCB /* CFNetwork.framework in Frameworks */,
+				9C5B880E1AEAF0000052FDCB /* libsqlite3.0.dylib in Frameworks */,
+				9C5B880C1AEAEFF60052FDCB /* libstdc++.6.dylib in Frameworks */,
+				9C5B880A1AEAEFE80052FDCB /* libz.1.1.3.dylib in Frameworks */,
+				9C5B87FE1AEAEE410052FDCB /* Bolts.framework in Frameworks */,
+				9C5B88001AEAEE410052FDCB /* FBSDKCoreKit.framework in Frameworks */,
+				9C5B88071AEAEE410052FDCB /* ParseUI.framework in Frameworks */,
+				9C5B88021AEAEE410052FDCB /* FBSDKShareKit.framework in Frameworks */,
+				9C5B88011AEAEE410052FDCB /* FBSDKLoginKit.framework in Frameworks */,
+				9C5B88031AEAEE410052FDCB /* Parse.framework in Frameworks */,
+				9C5B88061AEAEE410052FDCB /* ParseFacebookUtilsV4.framework in Frameworks */,
+				9C5B88041AEAEE410052FDCB /* ParseCrashReporting.framework in Frameworks */,
+				9C5B88051AEAEE410052FDCB /* ParseFacebookUtils.framework in Frameworks */,
+				9C5B87FF1AEAEE410052FDCB /* FBAudienceNetwork.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C5B87E11AEAEE220052FDCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9C5B87C21AEAEE210052FDCB = {
+			isa = PBXGroup;
+			children = (
+				9C5B88081AEAEE480052FDCB /* Frameworks */,
+				9C5B87CD1AEAEE210052FDCB /* scro2bro */,
+				9C5B87E71AEAEE220052FDCB /* scro2broTests */,
+				9C5B87CC1AEAEE210052FDCB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9C5B87CC1AEAEE210052FDCB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C5B87CB1AEAEE210052FDCB /* scro2bro.app */,
+				9C5B87E41AEAEE220052FDCB /* scro2broTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9C5B87CD1AEAEE210052FDCB /* scro2bro */ = {
+			isa = PBXGroup;
+			children = (
+				9C5B87D21AEAEE210052FDCB /* Scro2BroAppDelegate.h */,
+				9C5B87D31AEAEE210052FDCB /* Scro2BroAppDelegate.m */,
+				9C5B87D51AEAEE210052FDCB /* Scro2BroViewController.h */,
+				9C5B87D61AEAEE210052FDCB /* Scro2BroViewController.m */,
+				9C5B87D81AEAEE210052FDCB /* Main.storyboard */,
+				9C5B87DB1AEAEE210052FDCB /* Images.xcassets */,
+				9C5B87DD1AEAEE210052FDCB /* LaunchScreen.xib */,
+				9C5B87CE1AEAEE210052FDCB /* Supporting Files */,
+			);
+			path = scro2bro;
+			sourceTree = "<group>";
+		};
+		9C5B87CE1AEAEE210052FDCB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C5B87CF1AEAEE210052FDCB /* Info.plist */,
+				9C5B87D01AEAEE210052FDCB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9C5B87E71AEAEE220052FDCB /* scro2broTests */ = {
+			isa = PBXGroup;
+			children = (
+				9C5B87EA1AEAEE220052FDCB /* scro2broTests.m */,
+				9C5B87E81AEAEE220052FDCB /* Supporting Files */,
+			);
+			path = scro2broTests;
+			sourceTree = "<group>";
+		};
+		9C5B87E81AEAEE220052FDCB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C5B87E91AEAEE220052FDCB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9C5B88081AEAEE480052FDCB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C5B88171AEAF04D0052FDCB /* Security.framework */,
+				9C5B88151AEAF0430052FDCB /* MobileCoreServices.framework */,
+				9C5B88131AEAF0390052FDCB /* SystemConfiguration.framework */,
+				9C5B88111AEAF0320052FDCB /* AudioToolbox.framework */,
+				9C5B880F1AEAF0220052FDCB /* CFNetwork.framework */,
+				9C5B880D1AEAF0000052FDCB /* libsqlite3.0.dylib */,
+				9C5B880B1AEAEFF60052FDCB /* libstdc++.6.dylib */,
+				9C5B88091AEAEFE80052FDCB /* libz.1.1.3.dylib */,
+				9C5B87F41AEAEE410052FDCB /* Bolts.framework */,
+				9C5B87F51AEAEE410052FDCB /* FBAudienceNetwork.framework */,
+				9C5B87F61AEAEE410052FDCB /* FBSDKCoreKit.framework */,
+				9C5B87F71AEAEE410052FDCB /* FBSDKLoginKit.framework */,
+				9C5B87F81AEAEE410052FDCB /* FBSDKShareKit.framework */,
+				9C5B87F91AEAEE410052FDCB /* Parse.framework */,
+				9C5B87FA1AEAEE410052FDCB /* ParseCrashReporting.framework */,
+				9C5B87FB1AEAEE410052FDCB /* ParseFacebookUtils.framework */,
+				9C5B87FC1AEAEE410052FDCB /* ParseFacebookUtilsV4.framework */,
+				9C5B87FD1AEAEE410052FDCB /* ParseUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9C5B87CA1AEAEE210052FDCB /* scro2bro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C5B87EE1AEAEE220052FDCB /* Build configuration list for PBXNativeTarget "scro2bro" */;
+			buildPhases = (
+				9C5B87C71AEAEE210052FDCB /* Sources */,
+				9C5B87C81AEAEE210052FDCB /* Frameworks */,
+				9C5B87C91AEAEE210052FDCB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = scro2bro;
+			productName = scro2bro;
+			productReference = 9C5B87CB1AEAEE210052FDCB /* scro2bro.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9C5B87E31AEAEE220052FDCB /* scro2broTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C5B87F11AEAEE220052FDCB /* Build configuration list for PBXNativeTarget "scro2broTests" */;
+			buildPhases = (
+				9C5B87E01AEAEE220052FDCB /* Sources */,
+				9C5B87E11AEAEE220052FDCB /* Frameworks */,
+				9C5B87E21AEAEE220052FDCB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C5B87E61AEAEE220052FDCB /* PBXTargetDependency */,
+			);
+			name = scro2broTests;
+			productName = scro2broTests;
+			productReference = 9C5B87E41AEAEE220052FDCB /* scro2broTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9C5B87C31AEAEE210052FDCB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = bitcows;
+				TargetAttributes = {
+					9C5B87CA1AEAEE210052FDCB = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					9C5B87E31AEAEE220052FDCB = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 9C5B87CA1AEAEE210052FDCB;
+					};
+				};
+			};
+			buildConfigurationList = 9C5B87C61AEAEE210052FDCB /* Build configuration list for PBXProject "scro2bro" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9C5B87C21AEAEE210052FDCB;
+			productRefGroup = 9C5B87CC1AEAEE210052FDCB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9C5B87CA1AEAEE210052FDCB /* scro2bro */,
+				9C5B87E31AEAEE220052FDCB /* scro2broTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9C5B87C91AEAEE210052FDCB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C5B87DA1AEAEE210052FDCB /* Main.storyboard in Resources */,
+				9C5B87DF1AEAEE210052FDCB /* LaunchScreen.xib in Resources */,
+				9C5B87DC1AEAEE210052FDCB /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C5B87E21AEAEE220052FDCB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9C5B87C71AEAEE210052FDCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C5B87D71AEAEE210052FDCB /* Scro2BroViewController.m in Sources */,
+				9C5B87D41AEAEE210052FDCB /* Scro2BroAppDelegate.m in Sources */,
+				9C5B87D11AEAEE210052FDCB /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C5B87E01AEAEE220052FDCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C5B87EB1AEAEE220052FDCB /* scro2broTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9C5B87E61AEAEE220052FDCB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C5B87CA1AEAEE210052FDCB /* scro2bro */;
+			targetProxy = 9C5B87E51AEAEE220052FDCB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9C5B87D81AEAEE210052FDCB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C5B87D91AEAEE210052FDCB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9C5B87DD1AEAEE210052FDCB /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C5B87DE1AEAEE210052FDCB /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9C5B87EC1AEAEE220052FDCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9C5B87ED1AEAEE220052FDCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9C5B87EF1AEAEE220052FDCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/djmason9/iPhone/SCRO/scro,
+				);
+				INFOPLIST_FILE = scro2bro/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9C5B87F01AEAEE220052FDCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/djmason9/iPhone/SCRO/scro,
+				);
+				INFOPLIST_FILE = scro2bro/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9C5B87F21AEAEE220052FDCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = scro2broTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/scro2bro.app/scro2bro";
+			};
+			name = Debug;
+		};
+		9C5B87F31AEAEE220052FDCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = scro2broTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/scro2bro.app/scro2bro";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9C5B87C61AEAEE210052FDCB /* Build configuration list for PBXProject "scro2bro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C5B87EC1AEAEE220052FDCB /* Debug */,
+				9C5B87ED1AEAEE220052FDCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C5B87EE1AEAEE220052FDCB /* Build configuration list for PBXNativeTarget "scro2bro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C5B87EF1AEAEE220052FDCB /* Debug */,
+				9C5B87F01AEAEE220052FDCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C5B87F11AEAEE220052FDCB /* Build configuration list for PBXNativeTarget "scro2broTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C5B87F21AEAEE220052FDCB /* Debug */,
+				9C5B87F31AEAEE220052FDCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9C5B87C31AEAEE210052FDCB /* Project object */;
+}
