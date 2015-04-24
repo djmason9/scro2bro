@@ -60,6 +60,7 @@
             [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
         }
     }
+    
     //can only do this in OS8 and up for notifications
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
@@ -92,7 +93,9 @@
                                                        annotation:annotation];
 }
 
-#pragma mark - Notifications
+#pragma mark Push Notifications
+
+
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     
     //Install user to parse
@@ -109,21 +112,21 @@
     }];
     
     
-    [PFUser logInWithUsernameInBackground:@"darren" password:@"darren"
-                                    block:^(PFUser *user, NSError *error) {
-                                        if (user) {
-                                            PFQuery *pushQuery = [PFInstallation query];
-                                            [pushQuery whereKey:@"userId" equalTo:[user objectId]];
-                                            
-                                            // Send push notification to query
-                                            PFPush *push = [[PFPush alloc] init];
-                                            [push setQuery:pushQuery]; // Set our Installation query
-                                            [push setMessage:@"Scro?"];
-                                            [push sendPushInBackground];
-                                        } else {
-                                            // The login failed. Check error to see why.
-                                        }
-                                    }];
+//    [PFUser logInWithUsernameInBackground:@"darren" password:@"darren"
+//                                    block:^(PFUser *user, NSError *error) {
+//                                        if (user) {
+//                                            PFQuery *pushQuery = [PFInstallation query];
+//                                            [pushQuery whereKey:@"userId" equalTo:[user objectId]];
+//                                            
+//                                            // Send push notification to query
+//                                            PFPush *push = [[PFPush alloc] init];
+//                                            [push setQuery:pushQuery]; // Set our Installation query
+//                                            [push setMessage:@"Scro?"];
+//                                            [push sendPushInBackground];
+//                                        } else {
+//                                            // The login failed. Check error to see why.
+//                                        }
+//                                    }];
     
     //    PFQuery *userQuery = [PFUser query];
     //    [userQuery whereKey:@"username" equalTo:@"aaron"];

@@ -45,8 +45,7 @@
 
     // Send push notification to query
     PFPush *push = [[PFPush alloc] init];
-
-    [push setMessage:@"YO! Scro!"];
+    [push setMessage:@"The Bro just shit!"];
     [push sendPushInBackground];
     
 }

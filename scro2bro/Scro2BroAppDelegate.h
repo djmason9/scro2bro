@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Scro2BroAppDelegate : UIResponder <UIApplicationDelegate>
+@interface Scro2BroAppDelegate : NSObject <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
