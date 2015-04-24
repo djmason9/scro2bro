@@ -41,6 +41,15 @@
     //    [push setMessage:@"Aaron Scro!"];
     //    [push sendPushInBackground];
 }
+- (IBAction)sendScro:(id)sender {
+
+    // Send push notification to query
+    PFPush *push = [[PFPush alloc] init];
+
+    [push setMessage:@"YO! Scro!"];
+    [push sendPushInBackground];
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

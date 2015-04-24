@@ -61,11 +61,17 @@
         }
     }
     //can only do this in OS8 and up for notifications
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
-        
-        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil]];
-        
+        UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
+                                                        UIUserNotificationTypeBadge |
+                                                        UIUserNotificationTypeSound);
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
+                                                                                 categories:nil];
+        [application registerUserNotificationSettings:settings];
+        [application registerForRemoteNotifications];
     } else
+#endif
     {
         [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
                                                          UIRemoteNotificationTypeAlert |
@@ -88,6 +94,8 @@
 
 #pragma mark - Notifications
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    
+    //Install user to parse
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:deviceToken];
     [currentInstallation saveInBackground];
