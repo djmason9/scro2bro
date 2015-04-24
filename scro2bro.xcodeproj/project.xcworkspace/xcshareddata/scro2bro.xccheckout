@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3332421D-C43F-4EB6-BC4D-97E8AC88136F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>scro2bro</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CE3C3A61ED70B4DEB986471D821F0F3A149EA89A</key>
+		<string>https://github.com/djmason9/scro2bro.git</string>
+		<key>E1A51E44B05D4CFB423DA339EA9A971C472AA76C</key>
+		<string>https://github.com/djmason9/SCRO.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>scro2bro.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CE3C3A61ED70B4DEB986471D821F0F3A149EA89A</key>
+		<string>../..</string>
+		<key>E1A51E44B05D4CFB423DA339EA9A971C472AA76C</key>
+		<string>../../../SCRO</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/djmason9/scro2bro.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CE3C3A61ED70B4DEB986471D821F0F3A149EA89A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E1A51E44B05D4CFB423DA339EA9A971C472AA76C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SCRO</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CE3C3A61ED70B4DEB986471D821F0F3A149EA89A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>scro2bro</string>
+		</dict>
+	</array>
+</dict>
+</plist>

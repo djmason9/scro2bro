@@ -23,9 +23,9 @@
     loginButton.center = self.view.center;
     [self.view addSubview:loginButton];
     
-    //    PFInstallation *installation = [PFInstallation currentInstallation];
-    //    [installation setObject:@"djmason9@gmail.com" forKey:@"email"];
-    //    [installation saveInBackground];
+//        PFInstallation *installation = [PFInstallation currentInstallation];
+//        [installation setObject:@"djmason9@gmail.com" forKey:@"email"];
+//        [installation saveInBackground];
     
     //    PFPush *push = [[PFPush alloc] init];
     //    [push setChannel:@"BRO"];

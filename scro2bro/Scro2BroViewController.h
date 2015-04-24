@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 bitcows. All rights reserved.
 //
 
+#import <Parse/Parse.h>
 #import <UIKit/UIKit.h>
 
 @interface Scro2BroViewController : UIViewController
