@@ -63,14 +63,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [SCSettings defaultSettings].shouldSkipLogin = YES;
+    _viewIsVisible = NO;
+}
 
 #pragma mark - Observations
 
 
 #pragma mark - Login Delegates
--(void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton{
+- (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton {
 
 }
+
 -(void)loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error{
     //welcome back from shitbook.. did you get the stuff?
     if(error){
@@ -85,8 +93,9 @@
                           otherButtonTitles:nil] show];
         
     }else{
-
-        
+        if (_viewIsVisible) {
+            [self performSegueWithIdentifier:@"showMain" sender:self];
+        }
     }
 
 
