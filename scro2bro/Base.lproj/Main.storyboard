@@ -20,6 +20,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="377" y="396"/>
         </scene>
         <!--Scro2 Bro Login View Controller-->
         <scene sceneID="fxy-tf-Or6">
@@ -53,10 +54,12 @@
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="0Xr-cC-3ij" id="3sl-LP-BI0"/>
+                        <segue destination="vXZ-lx-hvc" kind="modal" identifier="showMain" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="cjX-SG-kgK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bc2-ym-xce" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-397" y="396"/>
         </scene>
     </scenes>
 </document>

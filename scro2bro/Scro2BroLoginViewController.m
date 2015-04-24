@@ -9,9 +9,13 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 #import "Scro2BroLoginViewController.h"
+#import "SCSettings.h"
 
 @interface Scro2BroLoginViewController ()
-
+{
+    BOOL _viewDidAppear;
+    BOOL _viewIsVisible;
+}
 @end
 
 @implementation Scro2BroLoginViewController
@@ -34,10 +38,34 @@
     
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    SCSettings *settings = [SCSettings defaultSettings];
+    if (_viewDidAppear) {
+        _viewIsVisible = YES;
+        
+        // reset
+        settings.shouldSkipLogin = NO;
+    } else {
+        if (settings.shouldSkipLogin || [FBSDKAccessToken currentAccessToken]) {
+            [self performSegueWithIdentifier:@"showMain" sender:nil];
+        } else {
+            _viewIsVisible = YES;
+        }
+        _viewDidAppear = YES;
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+#pragma mark - Observations
+
 
 #pragma mark - Login Delegates
 -(void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton{
