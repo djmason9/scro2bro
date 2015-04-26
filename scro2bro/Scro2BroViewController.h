@@ -8,10 +8,11 @@
 
 #import <Parse/Parse.h>
 #import <UIKit/UIKit.h>
+#import <AddressBookUI/AddressBookUI.h>
 
 #import "Scro2BroProfilePictureButton.h"
 
-@interface Scro2BroViewController : UIViewController
+@interface Scro2BroViewController : UIViewController <ABPeoplePickerNavigationControllerDelegate>
 
 @property (nonatomic, strong) IBOutlet Scro2BroProfilePictureButton *profilePictureButton;
 
