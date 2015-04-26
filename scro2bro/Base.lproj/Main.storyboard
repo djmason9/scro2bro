@@ -31,7 +31,7 @@
                             </button>
                             <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="Qqx-49-kYT">
                                 <rect key="frame" x="0.0" y="21" width="600" height="44"/>
-                                <color key="barTintColor" red="1" green="0.435959345" blue="0.18629145259999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="1" green="0.88648726850000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem id="I66-f3-dJD">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="2TX-Q0-0gP">
@@ -93,12 +93,70 @@
                                     <outlet property="delegate" destination="AOf-4i-5vX" id="7rp-Nw-PNO"/>
                                 </connections>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="&quot;A shady bro. A bro is a friend. A shady bro would be a friend that you don't really trust.&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uv1-gk-lWm">
+                                <rect key="frame" x="161" y="130" width="278" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="261" id="mMD-Eg-ZKH"/>
+                                    <constraint firstAttribute="width" constant="278" id="u1L-X9-vAR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-ItalicMT" family="Times New Roman" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="mMD-Eg-ZKH"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="&quot;Scro&quot;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdg-Hl-xrp">
+                                <rect key="frame" x="255" y="94" width="91" height="45"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn your scro's into bro's with the scro 2 bro app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hus-Og-Zjx">
+                                <rect key="frame" x="190" y="491" width="221" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="221" id="H34-OW-54g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.88648726851851856" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="centerY" secondItem="rdg-Hl-xrp" secondAttribute="centerY" constant="60.5" id="9Q4-XB-PIT"/>
+                            <constraint firstItem="Uv1-gk-lWm" firstAttribute="leading" secondItem="gyN-6Z-b1p" secondAttribute="leadingMargin" constant="154" id="BOQ-yS-Rzo"/>
+                            <constraint firstItem="hus-Og-Zjx" firstAttribute="top" secondItem="0Xr-cC-3ij" secondAttribute="bottom" constant="8" id="MH8-TL-TyM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rdg-Hl-xrp" secondAttribute="trailing" constant="238" id="MRk-IL-GhQ"/>
+                            <constraint firstAttribute="centerY" secondItem="Uv1-gk-lWm" secondAttribute="centerY" constant="-13" id="MZh-E1-c6x"/>
                             <constraint firstAttribute="centerX" secondItem="0Xr-cC-3ij" secondAttribute="centerX" id="OdF-X6-Ax4"/>
+                            <constraint firstAttribute="centerX" secondItem="Uv1-gk-lWm" secondAttribute="centerX" constant="-0.5" id="Sx3-We-VO0"/>
+                            <constraint firstAttribute="centerY" secondItem="Uv1-gk-lWm" secondAttribute="centerY" constant="-13" id="Too-ww-gXT"/>
+                            <constraint firstAttribute="centerX" secondItem="rdg-Hl-xrp" secondAttribute="centerX" constant="-0.5" id="Zh4-RI-0CG"/>
+                            <constraint firstAttribute="centerY" secondItem="Uv1-gk-lWm" secondAttribute="centerY" constant="110" id="Zpj-zK-dsQ"/>
+                            <constraint firstAttribute="centerX" secondItem="hus-Og-Zjx" secondAttribute="centerX" constant="-0.5" id="bL6-jT-bH4"/>
+                            <constraint firstAttribute="centerX" secondItem="rdg-Hl-xrp" secondAttribute="centerX" constant="-0.5" id="dsx-SG-XfG"/>
+                            <constraint firstItem="Uv1-gk-lWm" firstAttribute="top" secondItem="rdg-Hl-xrp" secondAttribute="bottom" constant="-9" id="l6E-78-hBb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Uv1-gk-lWm" secondAttribute="trailing" constant="153" id="pbe-B3-kSB"/>
+                            <constraint firstAttribute="centerY" secondItem="rdg-Hl-xrp" secondAttribute="centerY" constant="183.5" id="qh3-VJ-Xqe"/>
+                            <constraint firstAttribute="centerY" secondItem="hus-Og-Zjx" secondAttribute="centerY" constant="-223.5" id="tcb-WN-8rR"/>
+                            <constraint firstAttribute="centerX" secondItem="Uv1-gk-lWm" secondAttribute="centerX" constant="-0.5" id="uH1-jy-MUj"/>
                             <constraint firstAttribute="centerY" secondItem="0Xr-cC-3ij" secondAttribute="centerY" constant="-161.5" id="vTW-m2-ggg"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="BOQ-yS-Rzo"/>
+                                <exclude reference="MZh-E1-c6x"/>
+                                <exclude reference="Too-ww-gXT"/>
+                                <exclude reference="pbe-B3-kSB"/>
+                                <exclude reference="uH1-jy-MUj"/>
+                                <exclude reference="9Q4-XB-PIT"/>
+                                <exclude reference="MRk-IL-GhQ"/>
+                                <exclude reference="dsx-SG-XfG"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="0Xr-cC-3ij" id="3sl-LP-BI0"/>
