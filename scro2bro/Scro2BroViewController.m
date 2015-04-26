@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.profilePictureButton.profileID = @"me";
+    
     // Do any additional setup after loading the view, typically from a nib.
 
     
@@ -48,10 +49,37 @@
     
     self.profilePictureButton.pictureCropping = FBSDKProfilePictureModeSquare;
     
+    
+//    if ([FBSDKAccessToken currentAccessToken]) {
+//        [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
+//         startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+//             if (!error) {
+//                 NSLog(@"fetched user:%@", result);
+//             }
+//         }];
+//    }
+    
 }
 - (IBAction)sendScro:(id)sender {
 
-    // Send push notification to query
+//    
+//    [PFUser logInWithUsernameInBackground:@"Darren" password:@"password"
+//            block:^(PFUser *user, NSError *error) {
+//                if (user) {
+//                    PFQuery *pushQuery = [PFInstallation query];
+//                    [pushQuery whereKey:@"userId" equalTo:[user objectId]];
+//                    
+//                    // Send push notification to query
+//                    PFPush *push = [[PFPush alloc] init];
+//                    [push setQuery:pushQuery]; // Set our Installation query
+//                    [push setMessage:@"Scro?"];
+//                    [push sendPushInBackground];
+//                } else {
+//                    // The login failed. Check error to see why.
+//                }
+//            }];
+    
+//    // Send push notification to query
     PFPush *push = [[PFPush alloc] init];
     [push setMessage:@"Sup SCRO!"];
     [push sendPushInBackground];

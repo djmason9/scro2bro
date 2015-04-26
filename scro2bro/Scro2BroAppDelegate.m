@@ -60,26 +60,9 @@
         }
     }
     
-    //can only do this in OS8 and up for notifications
-//#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
-//    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
-//        UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
-//                                                        UIUserNotificationTypeBadge |
-//                                                        UIUserNotificationTypeSound);
-//        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
-//                                                                                 categories:nil];
-//        [application registerUserNotificationSettings:settings];
-//        [application registerForRemoteNotifications];
-//    } else
-//#endif
-//    {
-//        [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
-//                                                         UIRemoteNotificationTypeAlert |
-//                                                         UIRemoteNotificationTypeSound)];
-//    }
+    [FBSDKProfile enableUpdatesOnAccessTokenChange:YES];
     
-    return [[FBSDKApplicationDelegate sharedInstance] application:application
-                                    didFinishLaunchingWithOptions:launchOptions];
+    return [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
 }
 
 - (BOOL)application:(UIApplication *)application
@@ -94,13 +77,10 @@
 
 #pragma mark Push Notifications
 
-
+//this happens after login
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     
-    //Install user to parse
-    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-    [currentInstallation setDeviceTokenFromData:deviceToken];
-    [currentInstallation saveInBackground];
+    
     
     [PFPush subscribeToChannelInBackground:@"" block:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
@@ -110,22 +90,42 @@
         }
     }];
     
+    if ([FBSDKAccessToken currentAccessToken]) {
+        [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
+         startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+             if (!error) {
+                 NSLog(@"fetched user:%@", result);
+                 
+                 PFUser *user = [PFUser user];
+                 user.username = result[@"email"];
+                 user.password = @"password";
+                 user.email = result[@"email"];
+                                     
+                 [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                     if (!error) {
+                        
+                         PFUser *currentUser = [PFUser currentUser];
+                         NSLog(@"userid: %@",[currentUser objectId]);
+                         // Hooray! Let them use the app now.
+                         //Install user to parse
+                         PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+                         [currentInstallation setDeviceTokenFromData:deviceToken];
+                         currentInstallation[@"userId"] = [currentUser objectId];
+                         [currentInstallation saveInBackground];
+                                                             
+                     } else {
+                         NSString *errorString = [error userInfo][@"error"];
+                         // Show the errorString somewhere and let the user try again.
+                     }
+                 }];
+                 
+             }
+         }];
+    }
+  
     
-//    [PFUser logInWithUsernameInBackground:@"darren" password:@"darren"
-//                                    block:^(PFUser *user, NSError *error) {
-//                                        if (user) {
-//                                            PFQuery *pushQuery = [PFInstallation query];
-//                                            [pushQuery whereKey:@"userId" equalTo:[user objectId]];
-//                                            
-//                                            // Send push notification to query
-//                                            PFPush *push = [[PFPush alloc] init];
-//                                            [push setQuery:pushQuery]; // Set our Installation query
-//                                            [push setMessage:@"Scro?"];
-//                                            [push sendPushInBackground];
-//                                        } else {
-//                                            // The login failed. Check error to see why.
-//                                        }
-//                                    }];
+    
+    
     
     //    PFQuery *userQuery = [PFUser query];
     //    [userQuery whereKey:@"username" equalTo:@"aaron"];

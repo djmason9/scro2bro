@@ -33,8 +33,7 @@
     [super viewDidLoad];
 //    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
 //    [self.view addSubview:loginButton];
-    
-    self.loginButton.readPermissions = @[@"public_profile", @"user_friends"];
+    self.loginButton.readPermissions = @[@"public_profile", @"email", @"user_friends"];
     
 }
 
@@ -96,6 +95,7 @@
                           otherButtonTitles:nil] show];
         
     }else{
+        
         if (_viewIsVisible) {
             
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
@@ -123,6 +123,8 @@
 
 
 }
+
+
 /*
 #pragma mark - Navigation
 
