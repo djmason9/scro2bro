@@ -9,8 +9,11 @@
 #import <Parse/Parse.h>
 #import <UIKit/UIKit.h>
 
+#import "Scro2BroProfilePictureButton.h"
+
 @interface Scro2BroViewController : UIViewController
 
+@property (nonatomic, strong) IBOutlet Scro2BroProfilePictureButton *profilePictureButton;
 
 @end
 

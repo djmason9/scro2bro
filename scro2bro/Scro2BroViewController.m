@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.profilePictureButton.profileID = @"me";
     // Do any additional setup after loading the view, typically from a nib.
 
     
@@ -40,6 +41,13 @@
     //    [push setQuery:pushQuery]; // Set our Installation query
     //    [push setMessage:@"Aaron Scro!"];
     //    [push sendPushInBackground];
+}
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.profilePictureButton.pictureCropping = FBSDKProfilePictureModeSquare;
+    
 }
 - (IBAction)sendScro:(id)sender {
 

@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9C05E71D1AEB06A400FAF077 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C05E71C1AEB06A400FAF077 /* StoreKit.framework */; };
-		9C3D6FFE1AEAFDEC00EB794D /* SCSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D6FFD1AEAFDEC00EB794D /* SCSettings.m */; };
+		9C14B2131AEC63ED00FAC8BA /* Scro2BroProfilePictureButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C14B2121AEC63ED00FAC8BA /* Scro2BroProfilePictureButton.m */; };
+		9C3D6FFE1AEAFDEC00EB794D /* Scro2broSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D6FFD1AEAFDEC00EB794D /* Scro2broSettings.m */; };
 		9C5B87D11AEAEE210052FDCB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5B87D01AEAEE210052FDCB /* main.m */; };
 		9C5B87D41AEAEE210052FDCB /* Scro2BroAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5B87D31AEAEE210052FDCB /* Scro2BroAppDelegate.m */; };
 		9C5B87D71AEAEE210052FDCB /* Scro2BroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5B87D61AEAEE210052FDCB /* Scro2BroViewController.m */; };
@@ -50,8 +51,10 @@
 /* Begin PBXFileReference section */
 		9C05E71C1AEB06A400FAF077 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9C05E71E1AEB07DD00FAF077 /* scro2bro-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "scro2bro-Prefix.pch"; path = "scro2bro/scro2bro-Prefix.pch"; sourceTree = SOURCE_ROOT; };
-		9C3D6FFC1AEAFDEC00EB794D /* SCSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSettings.h; sourceTree = "<group>"; };
-		9C3D6FFD1AEAFDEC00EB794D /* SCSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSettings.m; sourceTree = "<group>"; };
+		9C14B2111AEC63ED00FAC8BA /* Scro2BroProfilePictureButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scro2BroProfilePictureButton.h; sourceTree = "<group>"; };
+		9C14B2121AEC63ED00FAC8BA /* Scro2BroProfilePictureButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scro2BroProfilePictureButton.m; sourceTree = "<group>"; };
+		9C3D6FFC1AEAFDEC00EB794D /* Scro2broSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scro2broSettings.h; sourceTree = "<group>"; };
+		9C3D6FFD1AEAFDEC00EB794D /* Scro2broSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scro2broSettings.m; sourceTree = "<group>"; };
 		9C5B87CB1AEAEE210052FDCB /* scro2bro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scro2bro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C5B87CF1AEAEE210052FDCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C5B87D01AEAEE210052FDCB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -146,8 +149,10 @@
 		9C5B87CD1AEAEE210052FDCB /* scro2bro */ = {
 			isa = PBXGroup;
 			children = (
-				9C3D6FFC1AEAFDEC00EB794D /* SCSettings.h */,
-				9C3D6FFD1AEAFDEC00EB794D /* SCSettings.m */,
+				9C14B2111AEC63ED00FAC8BA /* Scro2BroProfilePictureButton.h */,
+				9C14B2121AEC63ED00FAC8BA /* Scro2BroProfilePictureButton.m */,
+				9C3D6FFC1AEAFDEC00EB794D /* Scro2broSettings.h */,
+				9C3D6FFD1AEAFDEC00EB794D /* Scro2broSettings.m */,
 				9C5B87D21AEAEE210052FDCB /* Scro2BroAppDelegate.h */,
 				9C5B87D31AEAEE210052FDCB /* Scro2BroAppDelegate.m */,
 				9C5B87D51AEAEE210052FDCB /* Scro2BroViewController.h */,
@@ -321,8 +326,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C14B2131AEC63ED00FAC8BA /* Scro2BroProfilePictureButton.m in Sources */,
 				9CE1C04F1AEAF60E002AF5C0 /* Scro2BroLoginViewController.m in Sources */,
-				9C3D6FFE1AEAFDEC00EB794D /* SCSettings.m in Sources */,
+				9C3D6FFE1AEAFDEC00EB794D /* Scro2broSettings.m in Sources */,
 				9C5B87D71AEAEE210052FDCB /* Scro2BroViewController.m in Sources */,
 				9C5B87D41AEAEE210052FDCB /* Scro2BroAppDelegate.m in Sources */,
 				9C5B87D11AEAEE210052FDCB /* main.m in Sources */,

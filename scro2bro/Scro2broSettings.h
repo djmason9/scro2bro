@@ -16,36 +16,12 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "SCSettings.h"
+#import <Foundation/Foundation.h>
 
-@implementation SCSettings
+@interface Scro2broSettings : NSObject
 
-#pragma mark - Class Methods
++ (instancetype)defaultSettings;
 
-+ (instancetype)defaultSettings
-{
-    static SCSettings *settings = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        settings = [[self alloc] init];
-    });
-    return settings;
-}
-
-#pragma mark - Properties
-
-static NSString *const kShouldSkipLoginKey = @"shouldSkipLogin";
-
-- (BOOL)shouldSkipLogin
-{
-    return [[NSUserDefaults standardUserDefaults] boolForKey:kShouldSkipLoginKey];
-}
-
-- (void)setShouldSkipLogin:(BOOL)shouldSkipLogin
-{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setBool:shouldSkipLogin forKey:kShouldSkipLoginKey];
-    [defaults synchronize];
-}
+@property (nonatomic, assign) BOOL shouldSkipLogin;
 
 @end

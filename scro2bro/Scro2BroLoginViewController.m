@@ -9,7 +9,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 #import "Scro2BroLoginViewController.h"
-#import "SCSettings.h"
+#import "Scro2broSettings.h"
 
 @interface Scro2BroLoginViewController ()
 {
@@ -42,7 +42,7 @@
 {
     [super viewDidAppear:animated];
     
-    SCSettings *settings = [SCSettings defaultSettings];
+    Scro2broSettings *settings = [Scro2broSettings defaultSettings];
     if (_viewDidAppear) {
         _viewIsVisible = YES;
         
@@ -67,12 +67,15 @@
 {
     [super viewWillDisappear:animated];
     
-    [SCSettings defaultSettings].shouldSkipLogin = YES;
+    [Scro2broSettings defaultSettings].shouldSkipLogin = YES;
     _viewIsVisible = NO;
 }
 
-#pragma mark - Observations
-
+#pragma mark - Logout
+- (IBAction)showLogin:(UIStoryboardSegue *)segue
+{
+    // This method exists in order to create an unwind segue to this controller.
+}
 
 #pragma mark - Login Delegates
 - (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton {
