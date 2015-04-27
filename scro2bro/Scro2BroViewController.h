@@ -15,6 +15,7 @@
 @interface Scro2BroViewController : UIViewController <ABPeoplePickerNavigationControllerDelegate,UIPickerViewDataSource,UIPickerViewDelegate>
 
 @property (nonatomic, strong) IBOutlet Scro2BroProfilePictureButton *profilePictureButton;
+@property (strong, nonatomic) IBOutlet UIPickerView *profileEmailPicker;
 
 @end
 

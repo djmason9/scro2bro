@@ -18,7 +18,8 @@
 @property (nonatomic,strong) IBOutlet UILabel *profileUserName;
 @property (nonatomic,strong) IBOutlet UILabel *profileUserEmail;
 @property (strong, nonatomic) IBOutlet UIPickerView *profileEmailList;
-@property (strong, nonatomic) IBOutlet UIPickerView *profileEmailPicker;
+@property (strong, nonatomic) NSString *choosenEmail;
+
 @property (strong, nonatomic) NSMutableArray *contactInfoArray;
 
 @end
@@ -32,13 +33,6 @@
     _profilePic.layer.masksToBounds = YES;
     _profilePic.layer.borderColor = [UIColor blackColor].CGColor;
     _profilePic.layer.borderWidth  = 2;
-    
-    _contactInfoArray = [NSMutableArray array];
-    [_contactInfoArray addObject:@"what"];
-    [_contactInfoArray addObject:@"the"];
-    [_contactInfoArray addObject:@"fuck"];
-    [_contactInfoArray addObject:@"man"];
-    [_contactInfoArray addObject:@"!"];
 
     // Do any additional setup after loading the view, typically from a nib.
 
@@ -83,7 +77,7 @@
 - (IBAction)sendScro:(id)sender {
 
 //    
-    [PFUser logInWithUsernameInBackground:_profileUserEmail.text password:@"password"
+    [PFUser logInWithUsernameInBackground:_choosenEmail password:@"password"
             block:^(PFUser *user, NSError *error) {
                 if (user) {
                     PFQuery *pushQuery = [PFInstallation query];
@@ -123,9 +117,8 @@
 - (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController*)peoplePicker didSelectPerson:(ABRecordRef)person{
     //check to see if that scro is a bro
     [self displayPerson:person];
-    
-
 }
+
 - (void)displayPerson:(ABRecordRef)person
 {
     _contactInfoArray = [NSMutableArray array];
@@ -136,6 +129,7 @@
     NSString* l_name = (__bridge_transfer NSString*)ABRecordCopyValue(person, kABPersonLastNameProperty);
     NSLog(@"NAME: %@",l_name);
     
+    NSString *email;
     _profileUserName.text = [NSString stringWithFormat:@"%@ %@",f_name,l_name];
     
     ABMultiValueRef emailsRef = ABRecordCopyValue(person, kABPersonEmailProperty);
@@ -144,29 +138,12 @@
             CFStringRef currentEmailLabel = ABMultiValueCopyLabelAtIndex(emailsRef, i);
             CFStringRef currentEmailValue = ABMultiValueCopyValueAtIndex(emailsRef, i);
             
-//            if (CFStringCompare(currentEmailLabel, kABHomeLabel, 0) == kCFCompareEqualTo) {
-////                [_contactInfoArray setObject:(__bridge NSString *)currentEmailValue forKey:@"homeEmail"];
-//                [_contactInfoArray addObject:(__bridge NSString *)currentEmailValue];
-//                _profileUserEmail.text = (__bridge NSString *)currentEmailValue;
-//                NSLog(@"Home Email: %@",(__bridge NSString *)currentEmailValue);
-//            }
-//            
-//            if (CFStringCompare(currentEmailLabel, kABWorkLabel, 0) == kCFCompareEqualTo) {
-////                [_contactInfoArray setObject:(__bridge NSString *)currentEmailValue forKey:@"workEmail"];
-//                _profileUserEmail.text = (__bridge NSString *)currentEmailValue;
-//                NSLog(@"Work Email: %@",(__bridge NSString *)currentEmailValue);
-//            }
-//            
-//            if (CFStringCompare(currentEmailLabel, kABOtherLabel, 0) == kCFCompareEqualTo) {
-////                [_contactInfoArray setObject:(__bridge NSString *)currentEmailValue forKey:@"otherEmail"];
-//                _profileUserEmail.text = (__bridge NSString *)currentEmailValue;
-//                NSLog(@"Other Email: %@",(__bridge NSString *)currentEmailValue);
-//            }
+            email = (__bridge NSString *)currentEmailValue;
             
-            [_contactInfoArray addObject:(__bridge NSString *)currentEmailValue];
-            _profileUserEmail.text = (__bridge NSString *)currentEmailValue;
+            [_contactInfoArray addObject:email];
+            _profileUserEmail.text = email;
+             NSLog(@"Email: %@",email);
             
-
             CFRelease(currentEmailLabel);
             CFRelease(currentEmailValue);
         }
@@ -174,11 +151,11 @@
         if(_contactInfoArray.count > 1){
             [_profileEmailPicker setHidden:NO];
             [_profileUserEmail setHidden:YES];
-            [_profileEmailPicker reloadAllComponents];
-            [_profileEmailPicker selectRow:0 inComponent:0 animated:YES];
+            [_profileEmailPicker reloadComponent:0];
         }else{
             [_profileEmailPicker setHidden: YES];
             [_profileUserEmail setHidden:NO];
+             _choosenEmail = email;
         }
     
         CFRelease(emailsRef);
@@ -201,21 +178,10 @@
             phone = @"[None]";
         }
         
-         NSLog(@"PHONE: %@",phone);
+        NSLog(@"PHONE: %@",phone);
         
         CFRelease(phoneNumbers);
     }
-    
-}
-
-
-// Called after a property has been selected by the user.
-- (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController*)peoplePicker didSelectPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier{
-    
-}
-
-// Called after the user has pressed cancel.
-- (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker{
     
 }
 
@@ -224,7 +190,6 @@
     return 1;
 }
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    
     return _contactInfoArray.count;
 }
 
@@ -234,6 +199,11 @@
         return _contactInfoArray[row];
     else
         return [_contactInfoArray lastObject];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    _choosenEmail = _contactInfoArray[row];
+    NSLog(@"Picked: %@", _choosenEmail);
 }
 
 

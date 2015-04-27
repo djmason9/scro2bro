@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AOf-4i-5vX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AOf-4i-5vX">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -69,7 +69,7 @@
                                     <constraint firstAttribute="width" constant="537" id="4Fq-Zi-d6E"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blank_profile.png" translatesAutoresizingMaskIntoConstraints="NO" id="StO-jP-GcH">
@@ -86,7 +86,7 @@
                                     <constraint firstAttribute="width" constant="288" id="ZVT-He-loP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -94,8 +94,8 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n9v-WG-Ioh">
-                                <rect key="frame" x="162" y="219" width="277" height="162"/>
+                            <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n9v-WG-Ioh">
+                                <rect key="frame" x="162" y="199" width="277" height="162"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="277" id="rIF-NQ-WDU"/>
                                 </constraints>
@@ -118,6 +118,7 @@
                             <constraint firstAttribute="centerY" secondItem="ZEv-5D-0wa" secondAttribute="centerY" constant="58.5" id="gg7-LU-0bJ"/>
                             <constraint firstAttribute="centerX" secondItem="n9v-WG-Ioh" secondAttribute="centerX" constant="-0.5" id="hKg-jE-MKg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Qqx-49-kYT" secondAttribute="trailing" constant="-16" id="m62-Ct-2FC"/>
+                            <constraint firstAttribute="centerY" secondItem="n9v-WG-Ioh" secondAttribute="centerY" constant="20" id="njG-oA-gG4"/>
                             <constraint firstAttribute="centerY" secondItem="ZEv-5D-0wa" secondAttribute="centerY" constant="51.5" id="ntF-U2-zpw"/>
                             <constraint firstAttribute="centerX" secondItem="bT6-zM-6M7" secondAttribute="centerX" id="oOL-Cj-zg7"/>
                             <constraint firstAttribute="centerX" secondItem="StO-jP-GcH" secondAttribute="centerX" id="qUJ-G5-pcP"/>
@@ -130,6 +131,7 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="rhg-Dk-tlA"/>
+                                <exclude reference="vqG-LP-Fhf"/>
                                 <exclude reference="gF9-Pl-a50"/>
                                 <exclude reference="M4U-b5-aOg"/>
                                 <exclude reference="gg7-LU-0bJ"/>
@@ -139,7 +141,7 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="profileEmailList" destination="n9v-WG-Ioh" id="pOc-Kj-7RS"/>
+                        <outlet property="profileEmailPicker" destination="n9v-WG-Ioh" id="uc8-s7-fmA"/>
                         <outlet property="profilePic" destination="StO-jP-GcH" id="ZfR-1v-jl9"/>
                         <outlet property="profilePictureButton" destination="2Wb-LB-V41" id="13B-pQ-UY7"/>
                         <outlet property="profileUserEmail" destination="ZEv-5D-0wa" id="WAJ-9A-cXB"/>
@@ -181,7 +183,7 @@
                                     <constraint firstAttribute="width" constant="278" id="u1L-X9-vAR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-ItalicMT" family="Times New Roman" pointSize="21"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -192,7 +194,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="&quot;Scro&quot;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdg-Hl-xrp">
                                 <rect key="frame" x="255" y="94" width="91" height="45"/>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn your scro's into bro's with the scro 2 bro app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hus-Og-Zjx">
@@ -201,7 +203,7 @@
                                     <constraint firstAttribute="width" constant="221" id="H34-OW-54g"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
