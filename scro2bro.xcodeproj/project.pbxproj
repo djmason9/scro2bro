@@ -37,6 +37,7 @@
 		9C9B94B91AEAF3310095B091 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9B94AF1AEAF3310095B091 /* ParseFacebookUtilsV4.framework */; };
 		9C9B94BA1AEAF3310095B091 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9B94B01AEAF3310095B091 /* ParseUI.framework */; };
 		9CE1C04F1AEAF60E002AF5C0 /* Scro2BroLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C04E1AEAF60E002AF5C0 /* Scro2BroLoginViewController.m */; };
+		BC227F061AEEDD9B00DBB84B /* scrohands.png in Resources */ = {isa = PBXBuildFile; fileRef = BC227F051AEEDD9B00DBB84B /* scrohands.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		9C9B94B01AEAF3310095B091 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		9CE1C04D1AEAF60E002AF5C0 /* Scro2BroLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scro2BroLoginViewController.h; sourceTree = "<group>"; };
 		9CE1C04E1AEAF60E002AF5C0 /* Scro2BroLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scro2BroLoginViewController.m; sourceTree = "<group>"; };
+		BC227F051AEEDD9B00DBB84B /* scrohands.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scrohands.png; path = scro2bro/scrohands.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		9C4946AF1AEDDA7C00EDF137 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BC227F051AEEDD9B00DBB84B /* scrohands.png */,
 				9C4946B01AEDDA8B00EDF137 /* blank_profile.png */,
 			);
 			name = Resources;
@@ -319,6 +322,7 @@
 			files = (
 				9C4946B11AEDDA8B00EDF137 /* blank_profile.png in Resources */,
 				9C5B87DA1AEAEE210052FDCB /* Main.storyboard in Resources */,
+				BC227F061AEEDD9B00DBB84B /* scrohands.png in Resources */,
 				9C5B87DF1AEAEE210052FDCB /* LaunchScreen.xib in Resources */,
 				9C5B87DC1AEAEE210052FDCB /* Images.xcassets in Resources */,
 			);

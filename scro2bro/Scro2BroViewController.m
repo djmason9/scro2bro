@@ -10,6 +10,8 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "Scro2BroViewController.h"
 
+#define CONTATCT_DETAIL_EMAIL @"email"
+#define CONTATCT_DETAIL_ISUSER @"isUser"
 
 @interface Scro2BroViewController ()
 
@@ -122,6 +124,7 @@
 - (void)displayPerson:(ABRecordRef)person
 {
     _contactInfoArray = [NSMutableArray array];
+    
 
     NSString* f_name = (__bridge_transfer NSString*)ABRecordCopyValue(person, kABPersonFirstNameProperty);
     NSLog(@"NAME: %@",f_name);
@@ -129,23 +132,40 @@
     NSString* l_name = (__bridge_transfer NSString*)ABRecordCopyValue(person, kABPersonLastNameProperty);
     NSLog(@"NAME: %@",l_name);
     
-    NSString *email;
+    
     _profileUserName.text = [NSString stringWithFormat:@"%@ %@",f_name,l_name];
     
     ABMultiValueRef emailsRef = ABRecordCopyValue(person, kABPersonEmailProperty);
     if(emailsRef){
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            NSString *email;
+            
         for (int i=0; i<ABMultiValueGetCount(emailsRef); i++) {
+            NSMutableDictionary *contactDetails =[NSMutableDictionary dictionary];
             CFStringRef currentEmailLabel = ABMultiValueCopyLabelAtIndex(emailsRef, i);
             CFStringRef currentEmailValue = ABMultiValueCopyValueAtIndex(emailsRef, i);
             
             email = (__bridge NSString *)currentEmailValue;
             
-            [_contactInfoArray addObject:email];
+            //set email
+            contactDetails[CONTATCT_DETAIL_EMAIL] = email;
+
             _profileUserEmail.text = email;
              NSLog(@"Email: %@",email);
             
             CFRelease(currentEmailLabel);
             CFRelease(currentEmailValue);
+            
+            PFUser *scroUser = [PFUser logInWithUsername:email password:@"password"];
+            if(scroUser){
+                NSLog(@"%@ is a user.",email);
+                contactDetails[CONTATCT_DETAIL_ISUSER] = @(YES);
+            }else{
+                contactDetails[CONTATCT_DETAIL_ISUSER] = @(NO);
+            }
+            
+            [_contactInfoArray addObject:contactDetails];
+            
         }
         
         if(_contactInfoArray.count > 1){
@@ -159,7 +179,7 @@
         }
     
         CFRelease(emailsRef);
-        
+        }];
     }
     
     if(ABPersonHasImageData(person)) {
@@ -196,13 +216,38 @@
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     
     if(_contactInfoArray.count-1 >= row)
-        return _contactInfoArray[row];
+        return _contactInfoArray[row][CONTATCT_DETAIL_EMAIL];
     else
-        return [_contactInfoArray lastObject];
+        return [_contactInfoArray lastObject][CONTATCT_DETAIL_EMAIL];
+}
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+
+    UIView *pickerCustomView = (id)view;
+    UILabel *pickerViewLabel;
+    UIImageView *pickerImageView;
+    
+    if (!pickerCustomView) {
+        pickerCustomView= [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [pickerView rowSizeForComponent:component].width - 10.0f, [pickerView rowSizeForComponent:component].height)];
+        pickerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 35.0f, 35.0f)];
+        pickerViewLabel= [[UILabel alloc] initWithFrame:CGRectMake(37.0f, 0.0f, [pickerView rowSizeForComponent:component].width - 10.0f, [pickerView rowSizeForComponent:component].height)];
+        // the values for x and y are specific for my example
+        [pickerCustomView addSubview:pickerImageView];
+        [pickerCustomView addSubview:pickerViewLabel];
+    }
+    
+    if([_contactInfoArray[row][CONTATCT_DETAIL_ISUSER] integerValue]){
+        pickerImageView.image = [UIImage imageNamed:@"scrohands.png"];
+    }
+    
+    pickerViewLabel.text = _contactInfoArray[row][CONTATCT_DETAIL_EMAIL];
+    
+    return pickerCustomView;
+    
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    _choosenEmail = _contactInfoArray[row];
+    _choosenEmail = _contactInfoArray[row][CONTATCT_DETAIL_EMAIL];
     NSLog(@"Picked: %@", _choosenEmail);
 }
 

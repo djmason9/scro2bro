@@ -38,6 +38,8 @@
     [Parse setApplicationId:@"ZMDENnahU6QCaQhVmM1jtjeubeBK7vLG8x3mzxkR"
                   clientKey:@"0urAbItimIorQX2ihDsRrNDHVoq9RrxSMnzs5NXy"];
     
+    [PFUser enableRevocableSessionInBackground];
+    
     [PFUser enableAutomaticUser];
     
     PFACL *defaultACL = [PFACL ACL];
@@ -90,6 +92,8 @@
         }
     }];
     
+    [PFUser enableAutomaticUser];
+    
     if ([FBSDKAccessToken currentAccessToken]) {
         [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
          startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
@@ -100,42 +104,38 @@
                  user.username = result[@"email"];
                  user.password = @"password";
                  user.email = result[@"email"];
-                                     
+    
                  [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                      if (!error) {
-                        
-                         PFUser *currentUser = [PFUser currentUser];
-                         NSLog(@"userid: %@",[currentUser objectId]);
                          // Hooray! Let them use the app now.
-                         //Install user to parse
-                         PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-                         [currentInstallation setDeviceTokenFromData:deviceToken];
-                         currentInstallation[@"userId"] = [currentUser objectId];
-                         [currentInstallation saveInBackground];
+                         [self addDevice:deviceToken andEmail:user.email];
                                                              
                      } else {
                          NSString *errorString = [error userInfo][@"error"];
-                         // Show the errorString somewhere and let the user try again.
+                         NSLog(@"ERROR:%@",errorString);
                      }
                  }];
                  
              }
          }];
     }
-  
+}
+
+-(void)addDevice:(NSData *)deviceToken andEmail:(NSString*)email{
+    //login now
     
-    
-    
-    
-    //    PFQuery *userQuery = [PFUser query];
-    //    [userQuery whereKey:@"username" equalTo:@"aaron"];
-    //    NSArray* userArray = [userQuery findObjects];
-    //    for (PFObject *object in userArray) {
-    //        NSLog(@"%@", object.objectId);
-    //    }
-    
-    //    PFUser *user = [userArray objectAtIndex:0];
-    
+    [PFUser logInWithUsernameInBackground:email password:@"password"
+            block:^(PFUser *user, NSError *error) {
+                if (user) {
+                    //Install user to parse
+                    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+                    [currentInstallation setDeviceTokenFromData:deviceToken];
+                    currentInstallation[@"userId"] = [user objectId];
+                    [currentInstallation saveInBackground];
+                } else {
+                    // The login failed. Check error to see why.
+                }
+    }];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
