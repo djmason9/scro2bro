@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bT6-zM-6M7">
-                                <rect key="frame" x="185" y="285" width="230" height="30"/>
+                                <rect key="frame" x="185" y="374" width="230" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="230" id="qJy-Ac-Nf1"/>
                                 </constraints>
@@ -63,18 +63,87 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dmd-TK-2Gn">
+                                <rect key="frame" x="32" y="190" width="537" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="537" id="4Fq-Zi-d6E"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blank_profile.png" translatesAutoresizingMaskIntoConstraints="NO" id="StO-jP-GcH">
+                                <rect key="frame" x="250" y="82" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Ule-xv-h7L"/>
+                                    <constraint firstAttribute="width" constant="100" id="vmj-aY-g0C"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEv-5D-0wa">
+                                <rect key="frame" x="156" y="212" width="288" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="537" id="QgL-1o-Jaj"/>
+                                    <constraint firstAttribute="width" constant="288" id="ZVT-He-loP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="QgL-1o-Jaj"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n9v-WG-Ioh">
+                                <rect key="frame" x="162" y="219" width="277" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="277" id="rIF-NQ-WDU"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="M4z-1l-UYv"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="VjR-z4-uZ9"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerY" secondItem="StO-jP-GcH" secondAttribute="centerY" constant="168" id="EA5-ty-JZ3"/>
                             <constraint firstItem="Qqx-49-kYT" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="1" id="Icx-21-QIZ"/>
+                            <constraint firstAttribute="centerX" secondItem="ZEv-5D-0wa" secondAttribute="centerX" constant="-0.5" id="M4U-b5-aOg"/>
+                            <constraint firstAttribute="centerX" secondItem="Dmd-TK-2Gn" secondAttribute="centerX" constant="-0.5" id="Twp-gn-bym"/>
+                            <constraint firstAttribute="centerY" secondItem="Dmd-TK-2Gn" secondAttribute="centerY" constant="99.5" id="W0k-X6-lHQ"/>
                             <constraint firstItem="Qqx-49-kYT" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="ZHY-k1-Udr"/>
+                            <constraint firstAttribute="centerY" secondItem="bT6-zM-6M7" secondAttribute="centerY" constant="-89" id="aqb-Fb-SgL"/>
+                            <constraint firstAttribute="centerY" secondItem="StO-jP-GcH" secondAttribute="centerY" constant="149" id="gF9-Pl-a50"/>
+                            <constraint firstAttribute="centerY" secondItem="ZEv-5D-0wa" secondAttribute="centerY" constant="58.5" id="gg7-LU-0bJ"/>
+                            <constraint firstAttribute="centerX" secondItem="n9v-WG-Ioh" secondAttribute="centerX" constant="-0.5" id="hKg-jE-MKg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Qqx-49-kYT" secondAttribute="trailing" constant="-16" id="m62-Ct-2FC"/>
+                            <constraint firstAttribute="centerY" secondItem="ZEv-5D-0wa" secondAttribute="centerY" constant="51.5" id="ntF-U2-zpw"/>
                             <constraint firstAttribute="centerX" secondItem="bT6-zM-6M7" secondAttribute="centerX" id="oOL-Cj-zg7"/>
+                            <constraint firstAttribute="centerX" secondItem="StO-jP-GcH" secondAttribute="centerX" id="qUJ-G5-pcP"/>
+                            <constraint firstAttribute="centerY" secondItem="Dmd-TK-2Gn" secondAttribute="centerY" constant="80.5" id="rhg-Dk-tlA"/>
                             <constraint firstAttribute="centerY" secondItem="bT6-zM-6M7" secondAttribute="centerY" id="vOw-hP-xhX"/>
+                            <constraint firstAttribute="centerY" secondItem="n9v-WG-Ioh" secondAttribute="centerY" id="vqG-LP-Fhf"/>
+                            <constraint firstAttribute="centerX" secondItem="ZEv-5D-0wa" secondAttribute="centerX" id="yIf-ek-GBk"/>
+                            <constraint firstAttribute="centerY" secondItem="ZEv-5D-0wa" secondAttribute="centerY" constant="77.5" id="zvn-jy-iXM"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="rhg-Dk-tlA"/>
+                                <exclude reference="gF9-Pl-a50"/>
+                                <exclude reference="M4U-b5-aOg"/>
+                                <exclude reference="gg7-LU-0bJ"/>
+                                <exclude reference="ntF-U2-zpw"/>
+                                <exclude reference="vOw-hP-xhX"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="profileEmailList" destination="n9v-WG-Ioh" id="pOc-Kj-7RS"/>
+                        <outlet property="profilePic" destination="StO-jP-GcH" id="ZfR-1v-jl9"/>
                         <outlet property="profilePictureButton" destination="2Wb-LB-V41" id="13B-pQ-UY7"/>
+                        <outlet property="profileUserEmail" destination="ZEv-5D-0wa" id="WAJ-9A-cXB"/>
+                        <outlet property="profileUserName" destination="Dmd-TK-2Gn" id="YNS-gC-15q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -180,4 +249,7 @@
             <point key="canvasLocation" x="-397" y="396"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="blank_profile.png" width="700" height="700"/>
+    </resources>
 </document>

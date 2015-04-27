@@ -12,7 +12,7 @@
 
 #import "Scro2BroProfilePictureButton.h"
 
-@interface Scro2BroViewController : UIViewController <ABPeoplePickerNavigationControllerDelegate>
+@interface Scro2BroViewController : UIViewController <ABPeoplePickerNavigationControllerDelegate,UIPickerViewDataSource,UIPickerViewDelegate>
 
 @property (nonatomic, strong) IBOutlet Scro2BroProfilePictureButton *profilePictureButton;
 

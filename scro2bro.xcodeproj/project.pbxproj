@@ -10,6 +10,7 @@
 		9C05E71D1AEB06A400FAF077 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C05E71C1AEB06A400FAF077 /* StoreKit.framework */; };
 		9C14B2131AEC63ED00FAC8BA /* Scro2BroProfilePictureButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C14B2121AEC63ED00FAC8BA /* Scro2BroProfilePictureButton.m */; };
 		9C3D6FFE1AEAFDEC00EB794D /* Scro2broSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D6FFD1AEAFDEC00EB794D /* Scro2broSettings.m */; };
+		9C4946B11AEDDA8B00EDF137 /* blank_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C4946B01AEDDA8B00EDF137 /* blank_profile.png */; };
 		9C5B87D11AEAEE210052FDCB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5B87D01AEAEE210052FDCB /* main.m */; };
 		9C5B87D41AEAEE210052FDCB /* Scro2BroAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5B87D31AEAEE210052FDCB /* Scro2BroAppDelegate.m */; };
 		9C5B87D71AEAEE210052FDCB /* Scro2BroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5B87D61AEAEE210052FDCB /* Scro2BroViewController.m */; };
@@ -55,6 +56,7 @@
 		9C14B2121AEC63ED00FAC8BA /* Scro2BroProfilePictureButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scro2BroProfilePictureButton.m; sourceTree = "<group>"; };
 		9C3D6FFC1AEAFDEC00EB794D /* Scro2broSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scro2broSettings.h; sourceTree = "<group>"; };
 		9C3D6FFD1AEAFDEC00EB794D /* Scro2broSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scro2broSettings.m; sourceTree = "<group>"; };
+		9C4946B01AEDDA8B00EDF137 /* blank_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blank_profile.png; path = scro2bro/blank_profile.png; sourceTree = "<group>"; };
 		9C5B87CB1AEAEE210052FDCB /* scro2bro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scro2bro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C5B87CF1AEAEE210052FDCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C5B87D01AEAEE210052FDCB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -127,9 +129,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C4946AF1AEDDA7C00EDF137 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9C4946B01AEDDA8B00EDF137 /* blank_profile.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		9C5B87C21AEAEE210052FDCB = {
 			isa = PBXGroup;
 			children = (
+				9C4946AF1AEDDA7C00EDF137 /* Resources */,
 				9C5B88081AEAEE480052FDCB /* Frameworks */,
 				9C5B87CD1AEAEE210052FDCB /* scro2bro */,
 				9C5B87E71AEAEE220052FDCB /* scro2broTests */,
@@ -306,6 +317,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C4946B11AEDDA8B00EDF137 /* blank_profile.png in Resources */,
 				9C5B87DA1AEAEE210052FDCB /* Main.storyboard in Resources */,
 				9C5B87DF1AEAEE210052FDCB /* LaunchScreen.xib in Resources */,
 				9C5B87DC1AEAEE210052FDCB /* Images.xcassets in Resources */,

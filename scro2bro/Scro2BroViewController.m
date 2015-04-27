@@ -14,7 +14,12 @@
 @interface Scro2BroViewController ()
 
 @property (nonatomic, strong) ABPeoplePickerNavigationController *addressBookController;
-
+@property (nonatomic,strong) IBOutlet UIImageView *profilePic;
+@property (nonatomic,strong) IBOutlet UILabel *profileUserName;
+@property (nonatomic,strong) IBOutlet UILabel *profileUserEmail;
+@property (strong, nonatomic) IBOutlet UIPickerView *profileEmailList;
+@property (strong, nonatomic) IBOutlet UIPickerView *profileEmailPicker;
+@property (strong, nonatomic) NSMutableArray *contactInfoArray;
 
 @end
 
@@ -23,7 +28,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.profilePictureButton.profileID = @"me";
+    _profilePic.layer.cornerRadius = 50;
+    _profilePic.layer.masksToBounds = YES;
+    _profilePic.layer.borderColor = [UIColor blackColor].CGColor;
+    _profilePic.layer.borderWidth  = 2;
     
+    _contactInfoArray = [NSMutableArray array];
+    [_contactInfoArray addObject:@"what"];
+    [_contactInfoArray addObject:@"the"];
+    [_contactInfoArray addObject:@"fuck"];
+    [_contactInfoArray addObject:@"man"];
+    [_contactInfoArray addObject:@"!"];
+
     // Do any additional setup after loading the view, typically from a nib.
 
     
@@ -67,26 +83,26 @@
 - (IBAction)sendScro:(id)sender {
 
 //    
-//    [PFUser logInWithUsernameInBackground:@"Darren" password:@"password"
-//            block:^(PFUser *user, NSError *error) {
-//                if (user) {
-//                    PFQuery *pushQuery = [PFInstallation query];
-//                    [pushQuery whereKey:@"userId" equalTo:[user objectId]];
-//                    
-//                    // Send push notification to query
-//                    PFPush *push = [[PFPush alloc] init];
-//                    [push setQuery:pushQuery]; // Set our Installation query
-//                    [push setMessage:@"Scro?"];
-//                    [push sendPushInBackground];
-//                } else {
-//                    // The login failed. Check error to see why.
-//                }
-//            }];
+    [PFUser logInWithUsernameInBackground:_profileUserEmail.text password:@"password"
+            block:^(PFUser *user, NSError *error) {
+                if (user) {
+                    PFQuery *pushQuery = [PFInstallation query];
+                    [pushQuery whereKey:@"userId" equalTo:[user objectId]];
+                    
+                    // Send push notification to query
+                    PFPush *push = [[PFPush alloc] init];
+                    [push setQuery:pushQuery]; // Set our Installation query
+                    [push setMessage:@"Scro?"];
+                    [push sendPushInBackground];
+                } else {
+                    // The login failed. Check error to see why.
+                }
+            }];
     
 //    // Send push notification to query
-    PFPush *push = [[PFPush alloc] init];
-    [push setMessage:@"Sup SCRO!"];
-    [push sendPushInBackground];
+//    PFPush *push = [[PFPush alloc] init];
+//    [push setMessage:@"Sup SCRO!"];
+//    [push sendPushInBackground];
     
 }
 
@@ -112,52 +128,84 @@
 }
 - (void)displayPerson:(ABRecordRef)person
 {
-//    NSMutableDictionary *contactInfoDict = [NSMutableDictionary dictionary];
+    _contactInfoArray = [NSMutableArray array];
+
+    NSString* f_name = (__bridge_transfer NSString*)ABRecordCopyValue(person, kABPersonFirstNameProperty);
+    NSLog(@"NAME: %@",f_name);
     
-    NSString* name = (__bridge_transfer NSString*)ABRecordCopyValue(person, kABPersonFirstNameProperty);
-    NSLog(@"NAME: %@",name);
+    NSString* l_name = (__bridge_transfer NSString*)ABRecordCopyValue(person, kABPersonLastNameProperty);
+    NSLog(@"NAME: %@",l_name);
+    
+    _profileUserName.text = [NSString stringWithFormat:@"%@ %@",f_name,l_name];
     
     ABMultiValueRef emailsRef = ABRecordCopyValue(person, kABPersonEmailProperty);
     if(emailsRef){
-    for (int i=0; i<ABMultiValueGetCount(emailsRef); i++) {
-        CFStringRef currentEmailLabel = ABMultiValueCopyLabelAtIndex(emailsRef, i);
-        CFStringRef currentEmailValue = ABMultiValueCopyValueAtIndex(emailsRef, i);
-        
-        if (CFStringCompare(currentEmailLabel, kABHomeLabel, 0) == kCFCompareEqualTo) {
-//            [contactInfoDict setObject:(__bridge NSString *)currentEmailValue forKey:@"homeEmail"];
+        for (int i=0; i<ABMultiValueGetCount(emailsRef); i++) {
+            CFStringRef currentEmailLabel = ABMultiValueCopyLabelAtIndex(emailsRef, i);
+            CFStringRef currentEmailValue = ABMultiValueCopyValueAtIndex(emailsRef, i);
             
-            NSLog(@"Home Email: %@",(__bridge NSString *)currentEmailValue);
-        }
-        
-        if (CFStringCompare(currentEmailLabel, kABWorkLabel, 0) == kCFCompareEqualTo) {
-//            [contactInfoDict setObject:(__bridge NSString *)currentEmailValue forKey:@"workEmail"];
-            NSLog(@"Work Email: %@",(__bridge NSString *)currentEmailValue);
-        }
-        
-        if (CFStringCompare(currentEmailLabel, kABOtherLabel, 0) == kCFCompareEqualTo) {
-//            [contactInfoDict setObject:(__bridge NSString *)currentEmailValue forKey:@"otherEmail"];
-            NSLog(@"Other Email: %@",(__bridge NSString *)currentEmailValue);
-        }
+//            if (CFStringCompare(currentEmailLabel, kABHomeLabel, 0) == kCFCompareEqualTo) {
+////                [_contactInfoArray setObject:(__bridge NSString *)currentEmailValue forKey:@"homeEmail"];
+//                [_contactInfoArray addObject:(__bridge NSString *)currentEmailValue];
+//                _profileUserEmail.text = (__bridge NSString *)currentEmailValue;
+//                NSLog(@"Home Email: %@",(__bridge NSString *)currentEmailValue);
+//            }
+//            
+//            if (CFStringCompare(currentEmailLabel, kABWorkLabel, 0) == kCFCompareEqualTo) {
+////                [_contactInfoArray setObject:(__bridge NSString *)currentEmailValue forKey:@"workEmail"];
+//                _profileUserEmail.text = (__bridge NSString *)currentEmailValue;
+//                NSLog(@"Work Email: %@",(__bridge NSString *)currentEmailValue);
+//            }
+//            
+//            if (CFStringCompare(currentEmailLabel, kABOtherLabel, 0) == kCFCompareEqualTo) {
+////                [_contactInfoArray setObject:(__bridge NSString *)currentEmailValue forKey:@"otherEmail"];
+//                _profileUserEmail.text = (__bridge NSString *)currentEmailValue;
+//                NSLog(@"Other Email: %@",(__bridge NSString *)currentEmailValue);
+//            }
+            
+            [_contactInfoArray addObject:(__bridge NSString *)currentEmailValue];
+            _profileUserEmail.text = (__bridge NSString *)currentEmailValue;
+            
 
-        CFRelease(currentEmailLabel);
-        CFRelease(currentEmailValue);
+            CFRelease(currentEmailLabel);
+            CFRelease(currentEmailValue);
+        }
+        
+        if(_contactInfoArray.count > 1){
+            [_profileEmailPicker setHidden:NO];
+            [_profileUserEmail setHidden:YES];
+            [_profileEmailPicker reloadAllComponents];
+            [_profileEmailPicker selectRow:0 inComponent:0 animated:YES];
+        }else{
+            [_profileEmailPicker setHidden: YES];
+            [_profileUserEmail setHidden:NO];
+        }
+    
+        CFRelease(emailsRef);
+        
     }
     
-    CFRelease(emailsRef);
+    if(ABPersonHasImageData(person)) {
+        NSData *contactImageData = (__bridge NSData*) ABPersonCopyImageDataWithFormat(person, kABPersonImageFormatThumbnail);
+        UIImage *img = [[UIImage alloc] initWithData:contactImageData];
+        _profilePic.image = img;
     }
     
     NSString* phone = nil;
     ABMultiValueRef phoneNumbers = ABRecordCopyValue(person, kABPersonPhoneProperty);
-    if (ABMultiValueGetCount(phoneNumbers) > 0) {
-        phone = (__bridge_transfer NSString*)
-        ABMultiValueCopyValueAtIndex(phoneNumbers, 0);
-    } else {
-        phone = @"[None]";
+    if(phoneNumbers){
+        if (ABMultiValueGetCount(phoneNumbers) > 0) {
+            phone = (__bridge_transfer NSString*)
+            ABMultiValueCopyValueAtIndex(phoneNumbers, 0);
+        } else {
+            phone = @"[None]";
+        }
+        
+         NSLog(@"PHONE: %@",phone);
+        
+        CFRelease(phoneNumbers);
     }
     
-     NSLog(@"PHONE: %@",phone);
-    
-    CFRelease(phoneNumbers);
 }
 
 
@@ -170,5 +218,23 @@
 - (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker{
     
 }
+
+#pragma mark - Picker Delegate
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1;
+}
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    
+    return _contactInfoArray.count;
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    
+    if(_contactInfoArray.count-1 >= row)
+        return _contactInfoArray[row];
+    else
+        return [_contactInfoArray lastObject];
+}
+
 
 @end
