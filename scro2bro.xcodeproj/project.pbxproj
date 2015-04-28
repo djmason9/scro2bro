@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93E559681AEFEE55007E46A2 /* bottom_handImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E559661AEFEE55007E46A2 /* bottom_handImage.png */; };
+		93E559691AEFEE55007E46A2 /* top_handImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E559671AEFEE55007E46A2 /* top_handImage.png */; };
+		93E5596E1AEFEE74007E46A2 /* BroBump.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E5596B1AEFEE74007E46A2 /* BroBump.m */; };
+		93E5596F1AEFEE74007E46A2 /* BumpIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E5596D1AEFEE74007E46A2 /* BumpIcon.m */; };
 		9C05E71D1AEB06A400FAF077 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C05E71C1AEB06A400FAF077 /* StoreKit.framework */; };
 		9C14B2131AEC63ED00FAC8BA /* Scro2BroProfilePictureButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C14B2121AEC63ED00FAC8BA /* Scro2BroProfilePictureButton.m */; };
 		9C3D6FFE1AEAFDEC00EB794D /* Scro2broSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D6FFD1AEAFDEC00EB794D /* Scro2broSettings.m */; };
@@ -51,6 +55,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		93E559661AEFEE55007E46A2 /* bottom_handImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bottom_handImage.png; path = scro2bro/images/bottom_handImage.png; sourceTree = "<group>"; };
+		93E559671AEFEE55007E46A2 /* top_handImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = top_handImage.png; path = scro2bro/images/top_handImage.png; sourceTree = "<group>"; };
+		93E5596A1AEFEE74007E46A2 /* BroBump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BroBump.h; sourceTree = "<group>"; };
+		93E5596B1AEFEE74007E46A2 /* BroBump.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BroBump.m; sourceTree = "<group>"; };
+		93E5596C1AEFEE74007E46A2 /* BumpIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BumpIcon.h; sourceTree = "<group>"; };
+		93E5596D1AEFEE74007E46A2 /* BumpIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BumpIcon.m; sourceTree = "<group>"; };
 		9C05E71C1AEB06A400FAF077 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9C05E71E1AEB07DD00FAF077 /* scro2bro-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "scro2bro-Prefix.pch"; path = "scro2bro/scro2bro-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		9C14B2111AEC63ED00FAC8BA /* Scro2BroProfilePictureButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scro2BroProfilePictureButton.h; sourceTree = "<group>"; };
@@ -134,6 +144,8 @@
 		9C4946AF1AEDDA7C00EDF137 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				93E559661AEFEE55007E46A2 /* bottom_handImage.png */,
+				93E559671AEFEE55007E46A2 /* top_handImage.png */,
 				BC227F051AEEDD9B00DBB84B /* scrohands.png */,
 				9C4946B01AEDDA8B00EDF137 /* blank_profile.png */,
 			);
@@ -163,6 +175,10 @@
 		9C5B87CD1AEAEE210052FDCB /* scro2bro */ = {
 			isa = PBXGroup;
 			children = (
+				93E5596A1AEFEE74007E46A2 /* BroBump.h */,
+				93E5596B1AEFEE74007E46A2 /* BroBump.m */,
+				93E5596C1AEFEE74007E46A2 /* BumpIcon.h */,
+				93E5596D1AEFEE74007E46A2 /* BumpIcon.m */,
 				9C14B2111AEC63ED00FAC8BA /* Scro2BroProfilePictureButton.h */,
 				9C14B2121AEC63ED00FAC8BA /* Scro2BroProfilePictureButton.m */,
 				9C3D6FFC1AEAFDEC00EB794D /* Scro2broSettings.h */,
@@ -320,11 +336,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93E559691AEFEE55007E46A2 /* top_handImage.png in Resources */,
 				9C4946B11AEDDA8B00EDF137 /* blank_profile.png in Resources */,
 				9C5B87DA1AEAEE210052FDCB /* Main.storyboard in Resources */,
 				BC227F061AEEDD9B00DBB84B /* scrohands.png in Resources */,
 				9C5B87DF1AEAEE210052FDCB /* LaunchScreen.xib in Resources */,
 				9C5B87DC1AEAEE210052FDCB /* Images.xcassets in Resources */,
+				93E559681AEFEE55007E46A2 /* bottom_handImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +362,8 @@
 			files = (
 				9C14B2131AEC63ED00FAC8BA /* Scro2BroProfilePictureButton.m in Sources */,
 				9CE1C04F1AEAF60E002AF5C0 /* Scro2BroLoginViewController.m in Sources */,
+				93E5596F1AEFEE74007E46A2 /* BumpIcon.m in Sources */,
+				93E5596E1AEFEE74007E46A2 /* BroBump.m in Sources */,
 				9C3D6FFE1AEAFDEC00EB794D /* Scro2broSettings.m in Sources */,
 				9C5B87D71AEAEE210052FDCB /* Scro2BroViewController.m in Sources */,
 				9C5B87D41AEAEE210052FDCB /* Scro2BroAppDelegate.m in Sources */,
