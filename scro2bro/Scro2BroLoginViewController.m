@@ -19,6 +19,9 @@
 @end
 
 @implementation Scro2BroLoginViewController
+- (IBAction)takeMeBack:(id)sender {
+    [self performSegueWithIdentifier:@"showMain" sender:self];
+}
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,12 +46,13 @@
     Scro2broSettings *settings = [Scro2broSettings defaultSettings];
     if (_viewDidAppear) {
         _viewIsVisible = YES;
-        
+        [_takeMeBack setHidden:NO];
         // reset
         settings.shouldSkipLogin = NO;
     } else {
         if (settings.shouldSkipLogin || [FBSDKAccessToken currentAccessToken]) {
             [self performSegueWithIdentifier:@"showMain" sender:nil];
+            [_takeMeBack setHidden:YES];
         } else {
             _viewIsVisible = YES;
         }
@@ -77,7 +81,7 @@
 
 #pragma mark - Login Delegates
 - (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton {
-
+    [_takeMeBack setHidden:YES];
 }
 
 -(void)loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error{
@@ -119,7 +123,6 @@
             [self performSegueWithIdentifier:@"showMain" sender:self];
         }
     }
-
 
 }
 

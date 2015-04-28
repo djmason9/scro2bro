@@ -12,5 +12,6 @@
 @interface Scro2BroLoginViewController : UIViewController<FBSDKLoginButtonDelegate>
 
 @property (nonatomic, strong) IBOutlet FBSDKLoginButton *loginButton;
+@property (strong, nonatomic) IBOutlet UIButton *takeMeBack;
 
 @end
