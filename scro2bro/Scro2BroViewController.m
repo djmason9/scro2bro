@@ -14,6 +14,9 @@
 #define CONTATCT_DETAIL_ISUSER @"isUser"
 
 @interface Scro2BroViewController ()
+{
+    BOOL isContactAScro;
+}
 
 @property (nonatomic, strong) ABPeoplePickerNavigationController *addressBookController;
 @property (nonatomic,strong) IBOutlet UIImageView *profilePic;
@@ -35,6 +38,7 @@
     _profilePic.layer.masksToBounds = YES;
     _profilePic.layer.borderColor = [UIColor blackColor].CGColor;
     _profilePic.layer.borderWidth  = 2;
+    isContactAScro = NO;
 }
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -56,7 +60,7 @@
 - (IBAction)sendScro:(id)sender {
 
 //
-    if(_choosenEmail){
+    if(_choosenEmail && isContactAScro){
     [PFUser logInWithUsernameInBackground:_choosenEmail password:@"password"
             block:^(PFUser *user, NSError *error) {
                 if (user) {
@@ -241,6 +245,8 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     _choosenEmail = _contactInfoArray[row][CONTATCT_DETAIL_EMAIL];
+    isContactAScro = [_contactInfoArray[row][CONTATCT_DETAIL_ISUSER] integerValue];
+    
     NSLog(@"Picked: %@", _choosenEmail);
 }
 
