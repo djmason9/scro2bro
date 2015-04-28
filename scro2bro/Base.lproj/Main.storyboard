@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AOf-4i-5vX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AOf-4i-5vX">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -83,7 +83,7 @@
                                 </variation>
                             </label>
                             <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n9v-WG-Ioh">
-                                <rect key="frame" x="162" y="199" width="277" height="162"/>
+                                <rect key="frame" x="162" y="191" width="277" height="162"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="277" id="rIF-NQ-WDU"/>
                                 </constraints>
@@ -92,9 +92,22 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="VjR-z4-uZ9"/>
                                 </connections>
                             </pickerView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xFX-pp-wK6" customClass="BumpIcon">
-                                <rect key="frame" x="250" y="356" width="100" height="100"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFX-pp-wK6" customClass="BumpIcon">
+                                <rect key="frame" x="250" y="366" width="100" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="PPX-gs-OL7"/>
+                                    <constraint firstAttribute="height" constant="100" id="gY7-J1-rEo"/>
+                                </constraints>
+                                <variation key="heightClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="-1" y="13" width="87" height="60"/>
+                                </variation>
+                                <variation key="widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="13" y="88" width="36" height="53"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                </variation>
                                 <connections>
                                     <action selector="sendScro:" destination="vXZ-lx-hvc" eventType="touchDown" id="s35-7e-w8D"/>
                                     <outlet property="viewController" destination="vXZ-lx-hvc" id="pSw-hH-1o3"/>
@@ -103,12 +116,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="xFX-pp-wK6" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="234" id="10b-39-CoA"/>
+                            <constraint firstAttribute="centerX" secondItem="xFX-pp-wK6" secondAttribute="centerX" id="AcF-k2-7xP"/>
+                            <constraint firstAttribute="centerX" secondItem="xFX-pp-wK6" secondAttribute="centerX" id="Ama-fz-HdE"/>
+                            <constraint firstAttribute="centerX" secondItem="xFX-pp-wK6" secondAttribute="centerX" id="D51-vR-arg"/>
                             <constraint firstAttribute="centerY" secondItem="StO-jP-GcH" secondAttribute="centerY" constant="168" id="EA5-ty-JZ3"/>
                             <constraint firstItem="Qqx-49-kYT" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="1" id="Icx-21-QIZ"/>
                             <constraint firstAttribute="centerX" secondItem="ZEv-5D-0wa" secondAttribute="centerX" constant="-0.5" id="M4U-b5-aOg"/>
+                            <constraint firstAttribute="centerY" secondItem="xFX-pp-wK6" secondAttribute="centerY" constant="-116" id="Mr7-dA-9f7"/>
                             <constraint firstAttribute="centerX" secondItem="Dmd-TK-2Gn" secondAttribute="centerX" constant="-0.5" id="Twp-gn-bym"/>
                             <constraint firstAttribute="centerY" secondItem="Dmd-TK-2Gn" secondAttribute="centerY" constant="99.5" id="W0k-X6-lHQ"/>
                             <constraint firstItem="Qqx-49-kYT" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="ZHY-k1-Udr"/>
+                            <constraint firstAttribute="centerY" secondItem="xFX-pp-wK6" secondAttribute="centerY" constant="-106" id="ZdX-fO-Aap"/>
                             <constraint firstAttribute="centerY" secondItem="StO-jP-GcH" secondAttribute="centerY" constant="149" id="gF9-Pl-a50"/>
                             <constraint firstAttribute="centerY" secondItem="ZEv-5D-0wa" secondAttribute="centerY" constant="58.5" id="gg7-LU-0bJ"/>
                             <constraint firstAttribute="centerX" secondItem="n9v-WG-Ioh" secondAttribute="centerX" constant="-0.5" id="hKg-jE-MKg"/>
@@ -117,6 +136,7 @@
                             <constraint firstAttribute="centerY" secondItem="ZEv-5D-0wa" secondAttribute="centerY" constant="51.5" id="ntF-U2-zpw"/>
                             <constraint firstAttribute="centerX" secondItem="StO-jP-GcH" secondAttribute="centerX" id="qUJ-G5-pcP"/>
                             <constraint firstAttribute="centerY" secondItem="Dmd-TK-2Gn" secondAttribute="centerY" constant="80.5" id="rhg-Dk-tlA"/>
+                            <constraint firstAttribute="centerY" secondItem="n9v-WG-Ioh" secondAttribute="centerY" constant="28" id="sOp-oo-BHb"/>
                             <constraint firstAttribute="centerY" secondItem="n9v-WG-Ioh" secondAttribute="centerY" id="vqG-LP-Fhf"/>
                             <constraint firstAttribute="centerX" secondItem="ZEv-5D-0wa" secondAttribute="centerX" id="yIf-ek-GBk"/>
                             <constraint firstAttribute="centerY" secondItem="ZEv-5D-0wa" secondAttribute="centerY" constant="77.5" id="zvn-jy-iXM"/>
@@ -124,11 +144,16 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="rhg-Dk-tlA"/>
+                                <exclude reference="njG-oA-gG4"/>
                                 <exclude reference="vqG-LP-Fhf"/>
                                 <exclude reference="gF9-Pl-a50"/>
                                 <exclude reference="M4U-b5-aOg"/>
                                 <exclude reference="gg7-LU-0bJ"/>
                                 <exclude reference="ntF-U2-zpw"/>
+                                <exclude reference="10b-39-CoA"/>
+                                <exclude reference="AcF-k2-7xP"/>
+                                <exclude reference="D51-vR-arg"/>
+                                <exclude reference="ZdX-fO-Aap"/>
                             </mask>
                         </variation>
                     </view>
@@ -181,6 +206,12 @@
                                     <mask key="constraints">
                                         <exclude reference="mMD-Eg-ZKH"/>
                                     </mask>
+                                </variation>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="61" y="130" width="278" height="120"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="61" y="130" width="278" height="120"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="&quot;Scro&quot;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdg-Hl-xrp">

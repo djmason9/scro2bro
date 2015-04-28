@@ -21,13 +21,20 @@
 
 @implementation BumpIcon
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
+-(id)initWithCoder:(NSCoder *)aDecoder{
+    self = [super initWithCoder:aDecoder];
     if (self) {
     }
     return self;
+
 }
+//- (id)initWithFrame:(CGRect)frame
+//{
+//    self = [super initWithFrame:frame];
+//    if (self) {
+//    }
+//    return self;
+//}
 
 -(void)awakeFromNib {
     self.postion = 0;

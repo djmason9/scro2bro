@@ -31,8 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-//    [self.view addSubview:loginButton];
+
     self.loginButton.readPermissions = @[@"public_profile", @"email", @"user_friends"];
     
 }

@@ -35,29 +35,6 @@
     _profilePic.layer.masksToBounds = YES;
     _profilePic.layer.borderColor = [UIColor blackColor].CGColor;
     _profilePic.layer.borderWidth  = 2;
-
-    // Do any additional setup after loading the view, typically from a nib.
-
-    
-//        PFInstallation *installation = [PFInstallation currentInstallation];
-//        [installation setObject:@"djmason9@gmail.com" forKey:@"email"];
-//        [installation saveInBackground];
-    
-    //    PFPush *push = [[PFPush alloc] init];
-    //    [push setChannel:@"BRO"];
-    //    [push setMessage:@"The Bro just scored!"];
-    //    [push sendPushInBackground];
-    
-    // Create our Installation query
-    
-    //    PFQuery *pushQuery = [PFInstallation query];
-    //    [pushQuery whereKey:@"email" equalTo:@"aaronj3.14@gmail.com"];
-    //
-    //    // Send push notification to query
-    //    PFPush *push = [[PFPush alloc] init];
-    //    [push setQuery:pushQuery]; // Set our Installation query
-    //    [push setMessage:@"Aaron Scro!"];
-    //    [push sendPushInBackground];
 }
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -78,7 +55,8 @@
 }
 - (IBAction)sendScro:(id)sender {
 
-//    
+//
+    if(_choosenEmail){
     [PFUser logInWithUsernameInBackground:_choosenEmail password:@"password"
             block:^(PFUser *user, NSError *error) {
                 if (user) {
@@ -89,16 +67,30 @@
                     PFPush *push = [[PFPush alloc] init];
                     [push setQuery:pushQuery]; // Set our Installation query
                     [push setMessage:@"Scro?"];
-                    [push sendPushInBackground];
+                    [((UIButton*)sender) setEnabled:NO];
+                    [push sendPushInBackgroundWithBlock:^(BOOL succeeded, NSError * __nullable error) {
+                        [((UIButton*)sender) setEnabled:YES];
+                        
+                        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@""
+                                                                         message:@"Scro Sent!"
+                                                                        delegate:self
+                                                               cancelButtonTitle:@"Ok"
+                                                               otherButtonTitles: nil];
+                        [alert show];
+                        
+                    }];
                 } else {
                     // The login failed. Check error to see why.
                 }
             }];
-    
-//    // Send push notification to query
-//    PFPush *push = [[PFPush alloc] init];
-//    [push setMessage:@"Sup SCRO!"];
-//    [push sendPushInBackground];
+    }else{
+        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Oops!"
+                                                         message:@"No email selected."
+                                                        delegate:self
+                                               cancelButtonTitle:@"Sorry"
+                                               otherButtonTitles: nil];
+        [alert show];
+    }
     
 }
 
@@ -160,6 +152,7 @@
             if(scroUser){
                 NSLog(@"%@ is a user.",email);
                 contactDetails[CONTATCT_DETAIL_ISUSER] = @(YES);
+                _choosenEmail = email;
             }else{
                 contactDetails[CONTATCT_DETAIL_ISUSER] = @(NO);
             }
