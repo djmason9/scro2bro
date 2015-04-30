@@ -55,7 +55,7 @@
     if (!self.animationRunning)
     {
         //self.lastDrawTime = self.displayLink.timestamp;
-        [BroBump drawSperated_handsCanvasWithTop:self.postion boolean:YES];
+        [BroBump drawSperated_handsCanvasWithTop:self.postion];
         return;
     }
     
@@ -64,14 +64,14 @@
        // self.postion = ;
         [self.displayLink invalidate];
         self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(setNeedsDisplay)];
-        [BroBump drawSperated_handsCanvasWithTop:self.postion boolean:YES];
+        [BroBump drawSperated_handsCanvasWithTop:self.postion];
         [self setNeedsDisplay];
         
         return;
     }
     if (self.animationRunning) {
         self.postion = self.postion + 1;
-        [BroBump drawSperated_handsCanvasWithTop:self.postion boolean:NO];
+        [BroBump drawSperated_handsCanvasWithTop:self.postion];
     }
     
    
